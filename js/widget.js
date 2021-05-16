@@ -137,10 +137,10 @@
             x: lastCoord.x - firstCoord.x,
             y: lastCoord.y - firstCoord.y,
         }
-        if (diffCoord.x > 10) {
+        if (diffCoord.x > 30) {
             yearsButtonClick();
         }
-        if (diffCoord.x < -10) {
+        if (diffCoord.x < -30) {
             earlyButtonClick();
         }
         muhaWidget.removeEventListener('touchend', onMuhaWidgetTouchEnd);

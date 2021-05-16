@@ -114,22 +114,20 @@
         }
     };
     onWindowScrollWidget();
+    window.addEventListener('scroll', onWindowScrollWidget);
+
+
     let firstCoord, lastCoord;
     let onMuhaWidgetTouchStart = function (evt) {
         firstCoord = {
             x: evt.pageY || evt.changedTouches[0].pageX,
             y: evt.pageY || evt.changedTouches[0].pageY
         }
-        muhaWidget.addEventListener('touchmove', onMuhaWidgetTouchMove);
         muhaWidget.addEventListener('touchend', onMuhaWidgetTouchEnd);
-        // window.addEventListener('mousemove', onMuhaWidgetTouchMove);
         // window.addEventListener('mouseup', onMuhaWidgetTouchEnd);
     }
     muhaWidget.addEventListener('touchstart', onMuhaWidgetTouchStart);
-    // muhaWidget.addEventListener('mousedown', onMuhaWidgetTouchStart);
-
-    let onMuhaWidgetTouchMove = function (evt) {
-    }    
+    // muhaWidget.addEventListener('mousedown', onMuhaWidgetTouchStart);   
     let onMuhaWidgetTouchEnd = function (evt) {
         lastCoord = {
             x: evt.pageY || evt.changedTouches[0].pageX,
@@ -145,11 +143,8 @@
         if (diffCoord.x < -50) {
             earlyButtonClick();
         }
-        muhaWidget.removeEventListener('touchmove', onMuhaWidgetTouchMove);
         muhaWidget.removeEventListener('touchend', onMuhaWidgetTouchEnd);
-        // window.removeEventListener('mousemove', onMuhaWidgetTouchMove);
         // window.removeEventListener('mouseup', onMuhaWidgetTouchEnd);
     }
     
-    window.addEventListener('scroll', onWindowScrollWidget);
 })();

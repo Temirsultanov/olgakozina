@@ -124,10 +124,10 @@
             y: evt.pageY || evt.changedTouches[0].pageY
         }
         muhaWidget.addEventListener('touchend', onMuhaWidgetTouchEnd);
-        // window.addEventListener('mouseup', onMuhaWidgetTouchEnd);
+        window.addEventListener('mouseup', onMuhaWidgetTouchEnd);
     }
     muhaWidget.addEventListener('touchstart', onMuhaWidgetTouchStart);
-    // muhaWidget.addEventListener('mousedown', onMuhaWidgetTouchStart);   
+    muhaWidget.addEventListener('mousedown', onMuhaWidgetTouchStart);   
     let onMuhaWidgetTouchEnd = function (evt) {
         lastCoord = {
             x: evt.pageY || evt.changedTouches[0].pageX,
@@ -144,7 +144,7 @@
             earlyButtonClick();
         }
         muhaWidget.removeEventListener('touchend', onMuhaWidgetTouchEnd);
-        // window.removeEventListener('mouseup', onMuhaWidgetTouchEnd);
+        window.removeEventListener('mouseup', onMuhaWidgetTouchEnd);
     }
     
 })();

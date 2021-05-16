@@ -143,6 +143,7 @@
         if (diffCoord.x < -10) {
             earlyButtonClick();
         }
+        earlyButton.textContent = Math.round(diffCoord.x);
         muhaWidget.removeEventListener('touchend', onMuhaWidgetTouchEnd);
         window.removeEventListener('mouseup', onMuhaWidgetTouchEnd);
     }

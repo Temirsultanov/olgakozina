@@ -143,6 +143,7 @@
         if (diffCoord.x < -50) {
             earlyButtonClick();
         }
+        document.write("Success");
         muhaWidget.removeEventListener('touchend', onMuhaWidgetTouchEnd);
         window.removeEventListener('mouseup', onMuhaWidgetTouchEnd);
     }

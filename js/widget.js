@@ -5,7 +5,8 @@
     let mainTitleLast3 = document.querySelector('.muha-main__title-last3');
     let redPolygon = document.querySelector('.muha-red-polygon');
     let bluePolygon = document.querySelector('.muha-blue-polygon');
-
+    
+    let activeButton = "lastyears"; // early or lastyears
     let early = {
         "backend": 150,
         "frontend": 89,
@@ -62,6 +63,8 @@
         }
 
     ]
+
+
     lastyears["max"] = Object.values(lastyears).sort( (a, b) => { return b - a})[0]
     early["max"] = Object.values(early).sort( (a, b) => { return b - a})[0]
     let restartValue = function () {
@@ -102,6 +105,13 @@
     }
     earlyButton.addEventListener('click', earlyButtonClick);
     yearsButton.addEventListener('click', yearsButtonClick);
+    if (activeButton == "early") {
+        earlyButtonClick();
+    }
+    else if(activeButton == "lastyears"){
+        yearsButtonClick();
+    }
+
 
     let muhaWidget = document.querySelector('.muha-widget__main');
     let onWindowScrollWidget = function () {

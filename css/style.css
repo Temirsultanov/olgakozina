@@ -1734,14 +1734,14 @@ input:not(:placeholder-shown) {
   position: absolute;
   /* top: 0;
   left: 0; */
-  z-index: -2;
+  z-index: -1;
 
   height: auto;
   transition: 0.5s ease;
 }
 .muha-red-polygon{
   transform: rotate(-150deg);
-  z-index: -1;
+  z-index: 1;
 }
 .muha-blue-polygon{
   transform: rotate(63deg);

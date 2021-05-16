@@ -120,8 +120,8 @@
     let firstCoord, lastCoord;
     let onMuhaWidgetTouchStart = function (evt) {
         firstCoord = {
-            x: evt.pageY || evt.changedTouches[0].pageX,
-            y: evt.pageY || evt.changedTouches[0].pageY
+            x: evt.pageY || evt.clientX || evt.changedTouches[0].pageX,
+            y: evt.pageY || evt.clientX || evt.changedTouches[0].pageY
         }
         muhaWidget.addEventListener('touchend', onMuhaWidgetTouchEnd);
         window.addEventListener('mouseup', onMuhaWidgetTouchEnd);
